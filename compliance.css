@@ -1,0 +1,49 @@
+h1 {
+	background-position:0 0px;
+	background-repeat:no-repeat;
+	color:#E56615;
+	font-size:20px;
+	font-weight:bold;
+	margin:1em 2em 1em 2em;
+	text-align:left;
+}
+p {
+	margin:0 4em 1em 4em;
+	text-indent:4em;
+	text-align:justify;
+	letter-spacing:3px;
+}
+.key {
+	color:#E56615;
+	font-size:20px;
+	font-weight:bold;
+	margin:1em 2em 2em 2em;
+	text-align:left;
+}
+.value {
+	position:absolute;
+	left:20em;
+	margin:1em 4em 0 4em;
+	text-align:left;
+	letter-spacing:3px;
+}
+#sheet {
+	width:96.5%;
+	border:1px solid gray;
+	padding:8px;
+}
+#number h1 {
+	text-align:center;
+	text-transform:uppercase;
+	color:#A7C942;
+	font-size:40;
+}
+#scope {
+		margin:0 0 2em 0;
+}
+#status {
+		margin:0 0 2em 0;
+}
+#bateri {
+		margin:0 0 2em 0;
+}
