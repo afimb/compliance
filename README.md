@@ -23,15 +23,15 @@ Installation
 Get git source code :
 ```sh
 cd workspace
-git clone -b V2_2 git://github.com/afimb/compilance
-cd compilance
+git clone -b V2_2 git://github.com/afimb/compliance
+cd compliance
 ```
 
 Configuration
 -------------
 
 Configure css.
-* adapt compilance.css for your own look
+* adapt compliance.css for your own look
 
 Configure html.
 * adapt template.html for your own use
@@ -42,7 +42,7 @@ Run
 
 Export csv data with all strings between " and use comma as separator
 ```sh
-./compilance.rb [file.csv]
+./compliance.rb [file.csv]
 ```
 This script will produce a zip with the css and all test pages in file.zip
 
