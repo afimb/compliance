@@ -1,6 +1,6 @@
-# Compilance 
+# Compliance 
 
-Compilance is an open source ruby script which produce html pages from csv file; it is strictly used to produce pages for the chouette validation tests descriptioon
+Compliance is an open source ruby script which produce html pages from csv file; it is strictly used to produce pages for the chouette validation tests descriptioon
 
 
 Requirements
