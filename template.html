@@ -1,52 +1,39 @@
 <html>
-	<header>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<link href="compliance.css" rel="stylesheet" type="text/css"/>
-	</header>
-	<body>
-		<div id="sheet">
-			<div id="number">
-				<h1>%{c0}</h1>
-			</div>
-			<div id="goal">
-				<h1>Objectif</h1>
-				<p>
-					%{c1}
-				</p>
-			</div>
-			<div id="scope">
-				<span class="key">Champ d'application :</span>
-				<span class="value"> %{c2} </span>
-			</div>
-			<div id="status">
-				<span class="key">Status :</span>
-				<span class="value">%{c4}</span>
-			</div>
-			<div id="bateri">
-				<span class="key">Test Bateri couvert :</span>
-				<span class="value">
-					%{c7}
-				</span>
-			</div>
-			<div id="description">
-				<h1>Description</h1>
-				<p>
-					%{c5}
-				</p>
-			</div>
-			<div id="parameter">
-				<h1>Paramètres</h1>
-				<p>
-					%{c3}
-				</p>
-			</div>
-			<div id="note">
-				<h1>Note</h1>
-				<p>
-					%{c6}
-				</p>
-			</div>
-			<!-- div id="target"><h1>Rapport de validation</h1><p>%{c8}</p></div -->
-		</div>
-	</body>
+  <header>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="compliance.css" rel="stylesheet" type="text/css"/>
+  </header>
+  <body>
+    <div id="sheet">
+      <div id="number">
+	<h1><a = href="http://www.chouette.mobi">Logiciel Chouette</a> : Tests de Validation de données Neptune (version 2.0)</h1>
+	<h1>Fiche de test %{c0} (%{c4})</h1>
+      </div>
+      <div id="goal">
+	<h2>Objectif: </h2>
+	<p>%{c1}</p>
+      </div>
+      <div id="validity">
+	<p></p>
+	<p>test effectué %{c10}</p>
+	<p>Ok si %{c9}</p>
+      </div>
+      <div id="scope">
+	<h2>Données concernées : </h2>
+	<p>%{c2}</p>
+      </div>
+      <div id="description">
+	<h2>Description : </h2>
+	<p>%{c5}</p>
+      </div>
+      <div id="parameter">
+	<h2>Paramètres : </h2>
+	<p>%{c3}</p>
+      </div>
+      <div id="note">
+	<h2>Notes : </h2>
+	<p>%{c6}</p>
+      </div>
+    </div>
+  </body>
 </html>

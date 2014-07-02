@@ -33,9 +33,15 @@ Configuration
 Configure css.
 * adapt compliance.css for your own look
 
-Configure html.
-* adapt template.html for your own use
-
+Configure html (utf-8 encoded files).
+* adapt template.html for your own use 
+** %{cn} is replaced by the content of column n in csv (n start with value 0)
+** htm file will be named %{c0}.html
+* adapt index.html for index page
+** %{entries} wil be replaced by a bloc for each row in csv
+** bloc template is define in toc_entries.html
+* adapt toc_entries.html for table of content in index.html 
+** %{cn} is replaced by the content of column n in csv (n start with value 0)
 
 Run
 ---

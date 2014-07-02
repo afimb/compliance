@@ -20,10 +20,17 @@ class ComplianceDoc
     dir = Dir.mktmpdir
     @logger.info( "[DSU] create temp directory : #{dir}")
 
-    # load template
+    # load toc_entries template
+    template = File.open("toc_entries.html")
+    toc_template = template.read
+    template.close
+    toc_entries = ""
+    
+    # load sheet template
     template = File.open("template.html")
     text = template.read
-
+    template.close
+    
     # parse csv file
     i = 0
     CSV.foreach(source) do |row|
@@ -49,6 +56,8 @@ class ComplianceDoc
         j += 1
       end
       result = text % map
+      
+      toc_entries << toc_template % map
 
       # write html page
       path =  File.expand_path(name + ".html", dir)
@@ -56,7 +65,24 @@ class ComplianceDoc
       @logger.info("[DSU] write file : #{path}")
 
     end
+    
+    
 
+    # load index template
+    template = File.open("index.html")
+    text = template.read
+    template.close
+
+    map = {}
+    map["entries".to_sym] = toc_entries
+    result = text % map
+    
+    # write index.html page
+    path =  File.expand_path("index.html", dir)
+    File.open(path, 'w') { |file| file.write(result) }
+    @logger.info("[DSU] write file : #{path}")
+    
+    
     # append style sheet and compress all files
     FileUtils.cp("compliance.css", dir)
     compress(dir, source.sub(/.csv/) { '.zip' })
@@ -72,9 +98,12 @@ class ComplianceDoc
     FileUtils.remove_file(name, :force => true)
     Zip::ZipFile.open(name, Zip::ZipFile::CREATE) { |zipfile|
       Dir.foreach(dir) do |item|
-        item_path = "#{dir}/#{item}"
-        @logger.info("[DSU] add zip entry : #{item_path}")
-        zipfile.add( item,item_path) if File.file?item_path
+        next if item.start_with? "."
+                                                  
+	item_path = "#{dir}/#{item}"
+	@logger.info("[DSU] add zip entry : #{item_path}")
+	zipfile.add( item,item_path) if File.file?item_path
+        
       end
     }
     File.chmod(0644,name)
